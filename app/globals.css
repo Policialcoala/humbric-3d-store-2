@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 300 100% 50%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 180 100% 50%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a1a1a 100%);
+    min-height: 100vh;
+  }
+}
+
+.neon-border {
+  border: 1px solid;
+  box-shadow: 0 0 5px currentColor, inset 0 0 5px currentColor;
+}
+
+.gradient-neon {
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-glow {
+  animation: logo-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes logo-pulse {
+  0% {
+    color: #00ffff;
+    filter: drop-shadow(0 0 5px #00ffff);
+  }
+  50% {
+    color: #ff00ff;
+    filter: drop-shadow(0 0 5px #ff00ff);
+  }
+  100% {
+    color: #8000ff;
+    filter: drop-shadow(0 0 5px #8000ff);
+  }
+}
+
+.glowing-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.glowing-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00ffff, #8000ff, transparent);
+  background-size: 200% 100%;
+  animation: glow-slide 2s linear infinite;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+@keyframes glow-slide {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 255, 255, 0.5);
+}
