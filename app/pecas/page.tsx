@@ -86,11 +86,11 @@ const allProducts = [
   {
     id: 4,
     name: "Chaveiro de pokebola",
-    price: "R$ 8,00",
+    price: "R$ 7,00",
     images: [
-      "/chaveiropokebola1_3D.pg?height=300&width=300",
-      "/chaveiropokebola2_3D.ng?height=300&width=300",
-      "/chaveiropokebola3_3D.ng?height=300&width=300",
+      "/chaveiropokebola1_3D.jpg?height=300&width=300",
+      "/chaveiropokebola2_3D.png?height=300&width=300",
+      "/chaveiropokebola3_3D.png?height=300&width=300",
     ],
     rating: 4.9,
     reviews: 156,
@@ -407,9 +407,9 @@ export default function PecasPage() {
           </div>
         </div>
 
-        <div className="flex gap-8">
+        <div className="flex flex-col md:flex-row gap-8">
           {/* Filtros laterais */}
-          <aside className="w-64 flex-shrink-0">
+          <aside className="hidden md:block w-64 flex-shrink-0">
             <div className="sticky top-24">
               <h3 className="font-semibold text-lg mb-4 text-neon-blue">Categorias</h3>
               <div className="space-y-2">
@@ -418,8 +418,8 @@ export default function PecasPage() {
                     key={category.id}
                     onClick={() => setSelectedCategory(category.id)}
                     className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${selectedCategory === category.id
-                        ? "bg-neon-blue/20 text-neon-blue border border-neon-blue/50"
-                        : "hover:bg-muted/50 text-muted-foreground hover:text-white"
+                      ? "bg-neon-blue/20 text-neon-blue border border-neon-blue/50"
+                      : "hover:bg-muted/50 text-muted-foreground hover:text-white"
                       }`}
                   >
                     <div className="flex justify-between items-center">
@@ -439,7 +439,7 @@ export default function PecasPage() {
               <div className="text-sm text-muted-foreground">Ordenado por popularidade</div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
