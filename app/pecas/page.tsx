@@ -88,9 +88,9 @@ const allProducts = [
     name: "Chaveiro de pokebola",
     price: "R$ 8,00",
     images: [
-      "/chaveiropokebola1_3D.jpg?height=300&width=300",
-      "/chaveiropokebola2_3D.png?height=300&width=300",
-      "/chaveiropokebola3_3D.png?height=300&width=300",
+      "/chaveiropokebola1_3D.pg?height=300&width=300",
+      "/chaveiropokebola2_3D.ng?height=300&width=300",
+      "/chaveiropokebola3_3D.ng?height=300&width=300",
     ],
     rating: 4.9,
     reviews: 156,
