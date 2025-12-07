@@ -86,7 +86,7 @@ const allProducts = [
   {
     id: 4,
     name: "Chaveiro de pokebola",
-    price: "R$ 7,00",
+    price: "R$ 8,00",
     images: [
       "/chaveiropokebola1_3D.jpg?height=300&width=300",
       "/chaveiropokebola2_3D.png?height=300&width=300",
